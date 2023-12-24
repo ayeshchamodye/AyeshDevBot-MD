@@ -10,7 +10,7 @@ class Roles {
 
   constructor(config = {}) {
     this.#dataFile = config.dataFile || "./roles.json";
-    this.#prefix = config.prefix || "!role ";
+    this.#prefix = config.prefix || ".role ";
     this.#updateOnAdd = config.updateOnAdd || false;
     this.#updateOnRemove = config.updateOnRemove || false;
   }
@@ -25,11 +25,11 @@ class Roles {
       key.remoteJid,
       {
         text: `[ROLE HELP]\n
-        Creating role: !role create <role1> <role2>
-        Deleting role: !role delete <role1> <role2>
-        Listing all roles: !role list
-        Adding members to role: !role <role> add <tag member 1> <tag member 2>
-        Removing members from role: !role <role> remove <tag member 1> <tag member 2>\n
+        Creating role: .role create <role1> <role2>
+        Deleting role: .role delete <role1> <role2>
+        Listing all roles: .role list
+        Adding members to role: .role <role> add <tag member 1> <tag member 2>
+        Removing members from role: .role <role> remove <tag member 1> <tag member 2>\n
         Yup, that's all :)
         `,
       },

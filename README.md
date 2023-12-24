@@ -1,5 +1,8 @@
-# WhatsApp Bot
+# AyeshDevBot-MD 
+#### Created by Ayesh Dev
 
+<img alt="AyeshDev" height="400" src="https://raw.githubusercontent.com/ayeshchamodye/Baileys-Qr/main/1.jpg">
+  
 ## Getting Started
 
 ### Requirements
@@ -19,7 +22,7 @@ The app uses [Docker](https://www.docker.com/), so that's the only requirement.
 
 ### Mirror
 
-- Bot will reply to any message in the format `!mirror!<message>` with `<message>`.
+- Bot will reply to any message in the format `.mirror<message>` with `<message>`.
 - Just for fun, can also be used to check if the Bot is running or not.
 
 ### TagEveryone
@@ -32,7 +35,7 @@ The app uses [Docker](https://www.docker.com/), so that's the only requirement.
 
 - Ability to create custom roles (like in Discord) to tag a specific set of members in a group.
 - You can list roles, create new roles, delete roles and add or remove members from role.
-- Message `!role help` to learn how to use the functionalities.
+- Message `.role help` to learn how to use the functionalities.
   - You can do `@me` to simulate tagging yourself.
 - Bot will reply to any message containing the word `@<role>` (case insensitive), where `<role>` can be any role created and tag all the members of that role.
 - `NOTE`: Roles currently span across groups and chats. So one role can contain members from multiple group (and yes, you'll be able to tag people from other groups without them knowing!).

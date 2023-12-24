@@ -3,17 +3,17 @@
 
 const botConfig = {
   authFolder: "auth",
-  selfReply: false,
+  selfReply: true,
   logMessages: true,
 };
 
 const pluginsConfig = {
   mirror: {
-    prefix: "!mirror!",
+    prefix: ".mirror",
   },
   roles: {
     dataFile: "./roles.json",
-    prefix: "!role ",
+    prefix: ".role ",
     updateOnAdd: false,
     updateOnRemove: false,
   },
@@ -21,6 +21,19 @@ const pluginsConfig = {
     membersLimit: 100,
     trigger: "all",
   },
+  alive: {
+    prefix: ".alive",
+    image: "https://raw.githubusercontent.com/ayeshchamodye/Baileys-Qr/main/1.jpg",
+  },
+  menu: {
+    prefix: ".menu",
+    image: "https://raw.githubusercontent.com/ayeshchamodye/Baileys-Qr/main/1.jpg"
+},
+  news: {
+    prefix: ".news",
+    url: "https://ada-derana-news-bot-by-nbmods.sl-technicaltec.repl.co/",
+    },
+  
 };
 
 module.exports = { botConfig, pluginsConfig };

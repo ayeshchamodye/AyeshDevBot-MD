@@ -14,8 +14,26 @@ class Mirror {
 
   process(key, message) {
     const text = this.#getText(key, message);
+    
+if(text.toLowerCase().startsWith('.jid')) {
+
+         this.#sendMessage(key.remoteJid, { text: key.remoteJid },{quoted:{key , message},});
+}
+
+
 
     if (!text.toLowerCase().startsWith(this.#prefix)) return;
+
+
+    
+
+    const reactionMessage = {
+        react: {
+          text: "🪞", // use an empty string to remove the reaction
+          key: key,
+        },
+      };
+      this.#sendMessage(key.remoteJid, reactionMessage);
 
     this.#sendMessage(
       key.remoteJid,

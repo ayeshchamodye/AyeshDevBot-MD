@@ -1,0 +1,12 @@
+📑 *AyeshDevBot COMMANDS LIST* 
+```📚 This is the result of single mans hard work 💯```
+
+──────────────────────────────────────
+
+.alive : To check If bot Alive
+@all : To Tag All Members
+.mirror : Just For Fun
+.news : Latest News From derana.lk
+
+
+=======================================

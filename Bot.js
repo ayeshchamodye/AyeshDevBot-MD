@@ -1,8 +1,8 @@
-const makeWASocket = require("@whiskeysockets/baileys").default;
+const makeWASocket = require("@sampandey001/baileys").default;
 const {
   DisconnectReason,
   useMultiFileAuthState,
-} = require("@whiskeysockets/baileys");
+} = require("@sampandey001/baileys");
 const P = require("pino");
 
 class Bot {
@@ -24,22 +24,29 @@ class Bot {
   }
 
   async connect() {
-    const { state, saveCreds } = await useMultiFileAuthState(this.#authFolder);
+    
 
-    this.#saveCredentials = saveCreds;
+  
+        const { state, saveCreds } = await useMultiFileAuthState(
+          this.#authFolder,
+        );
 
-    this.#socket = makeWASocket({
-      printQRInTerminal: true,
-      auth: state,
-      getMessage: this.#getMessageFromStore,
-      logger: P({ level: "error" }),
-      downloadHistory: false,
-    });
+        this.#saveCredentials = saveCreds;
 
-    this.#plugins.forEach((plugin) =>
-      plugin.init(this.#socket, this.#getText, this.#sendMessage)
-    );
-  }
+        this.#socket = makeWASocket({
+          printQRInTerminal:true,
+          auth: state,
+          getMessage: this.#getMessageFromStore,
+          logger: P({ level: "error" }),
+          downloadHistory: false,
+        });
+
+        this.#plugins.forEach((plugin) =>
+          plugin.init(this.#socket, this.#getText, this.#sendMessage),
+        );
+      }
+    
+  
 
   async run() {
     this.#socket.ev.process(async (events) => {
@@ -60,7 +67,7 @@ class Bot {
           ) {
             console.log(
               new Date().toLocaleTimeString(),
-              "Timed out. Will retry in 1 minute."
+              "Timed out. Will retry in 1 minute.",
             );
             setTimeout(this.#restart.bind(this), 60 * 1000);
           } else {
