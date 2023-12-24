@@ -1,0 +1,24 @@
+{
+  "name": "AyeshDevBot-MD",
+  "description": "WhatsApp MD bot build with nodejs",
+  "repository": "https://github.com/ayeshchamodye/AyeshDevBot-MD",
+  "logo": "https://raw.githubusercontent.com/ayeshchamodye/Baileys-Qr/main/1.jpg",
+  "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ],
+   "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
